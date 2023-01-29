@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>LHD</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+    <header>
+        <h1>LHD Company</h1>
+        <img src="..//images/logo.jpg" alt="LHD Logo">
+    </header>    
+        <nav>
+            <ul>
+                <li><a href="../index.html">Strona główna</a></li>
+                <li><a href="../couriers/list.html">Kurierzy</a></li>
+                <li><a href="../orders/list.html">Zamówienia</a></li>
+                <li><a href="list.html" class="active">Klienci</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Edycja klienta</h2>
+            <form class="form">
+                <label for="firstName">Imię: <span class="symbol-required">*</span></label>
+                <input type="text" name="firstName" id="firstName" value="Emil" required/>
+                <span id="errorfirstName"></span>
+              
+                <label for="lastName">Nazwisko: <span class="symbol-required">*</span></label>
+                <input type="text" name="lastName" id="lastName" value="Mak" required/>
+                <span id="errorlastName"></span>
+
+                <label for="street">Ulica: <span class="symbol-required">*</span></label>
+                <input type="text" name="street" id="street" value="Praska 12" required/>
+                <span id="errorStreet"></span>
+
+                <label for="city">Miasto: <span class="symbol-required">*</span></label>
+                <input type="text" name="city" id="city" value="Warszawa" required/>
+                <span id="errorCity"></span>
+
+                <label for="zipCode">Kod pocztowy: <span class="symbol-required">*</span></label>
+                <input type="text" name="zipCode" id="zipCode" value="02-232" required/>
+                <span id="errorZipCode"></span>
+
+                <label for="email">E-mail: <span class="symbol-required">*</span></label>
+                <input type="text" name="email" id="email" value="maku@gmail.com" />
+                <span id="errorEmail"></span>
+            
+                <div class="form-buttons">
+                    <input type="submit" value="Dodaj" class="form-button-submit" />
+                    <a href="list.html" class="form-button-cancel">Anuluj</a>
+                </div>
+            </form>
+        </main>
+    <footer>
+        <p>Alan, Kaczmarzyk, s2295</p>
+    </footer>    
+
+</body>
+</html>

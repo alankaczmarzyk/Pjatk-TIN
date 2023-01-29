@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>LHD</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+    <header>
+        <h1>LHD Company</h1>
+        <img src="..//images/logo.jpg" alt="LHD Logo">
+    </header>    
+        <nav>
+            <ul>
+                <li><a href="../index.html">Strona główna</a></li>
+                <li><a href="../couriers/list.html">Kurierzy</a></li>
+                <li><a href="list.html" class="active">Zamówienia</a></li>
+                <li><a href="../customers/list.html">Klienci</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Nowe zamówienie</h2>
+            <form class="form">
+                <label for="courier">Kurier: <span class="symbol-required">*</span></label>
+                <select name="courier" id="courier" required>
+                    <option>-- Wybierz kuriera --</option>
+                    <option value="1">Jan Kowal</option>
+                    <option value="2">Michal Gola</option>
+                </select>
+                <span id="errorCourier" class="errors-text"></span>
+
+                <label for="customer">Klient: <span class="symbol-required">*</span></label>
+                <select name="customer" id="customer" required>
+                    <option>-- Wybierz klienta --</option>
+                    <option value="1">Emil Mak</option>
+                    <option value="2">Nina Żak</option>    
+                </select>  
+                <span id="errorCustomer" class="errors-text"></span>
+
+                <label for="weight">Waga: <span class="symbol-required">*</span></label>
+                <input type="text" name="weight" id="weight" required/>
+                <span id="errorWeight" class="errors-text"></span>
+
+                <label for="date">Data: </label>
+                <input type="date" name="date" id="date" required/>
+                <span id="errorDate" class="errors-text"></span>
+
+                <label for="price">Cena: <span class="symbol-required">*</span></label>
+                <input type="number" name="price" id="price" required/>
+                <span id="errorPrice" class="errors-text"></span>
+
+                <div class="form-buttons">
+                    <input type="submit" value="Dodaj" class="form-button-submit"/>
+                    <a href="list.html" class="form-button-cancel">Anuluj</a>
+                </div>
+            </form>
+        </main>
+    <footer>
+        <p>Alan, Kaczmarzyk, s2295</p>
+    </footer>    
+
+</body>
+</html>

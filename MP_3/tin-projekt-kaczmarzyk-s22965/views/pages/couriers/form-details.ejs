@@ -1,0 +1,42 @@
+<%- include('../../fragments/header.ejs') %>
+        <main>
+            <h2>Szczegóły kuriera</h2>
+            <form class="form">
+                <label for="firstName">Imię: <span class="symbol-required">*</span></label>
+                <input type="text" name="firstName" id="firstName" value="Jan" disabled/>
+                <span id="errorFirstName"></span>
+              
+                <label for="lastName">Nazwisko: <span class="symbol-required">*</span></label>
+                <input type="text" name="lastName" id="lastName" value="Kowalski" disabled/>
+                <span id="errorlastName"></span>
+
+               <p><a href="/couriers/edit/1" class="list-actions-button-edit">Edytuj</a></p>
+            </form>
+            <h2>Szczegóły zamówień</h2>
+            <table class="table-list">
+                <thead>
+                    <tr>
+                        <th>Klient</th>
+                        <th>Waga</th>
+                        <th>Data doręczenia</th>
+                        <th>Cena</th>
+                    </tr>
+                </thead>   
+                <tbody>
+                    <tr>
+                        <td>Jan Mak</td>
+                        <td>100kg</td>
+                        <td>19.10.2022</td>
+                        <td>500 PLN</td>
+                    </tr>
+                    <tr>
+                        <td>Nina Żak</td>
+                        <td>10kg</td>
+                        <td>18.10.2022</td>
+                        <td>25 PLN</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><a href="/couriers" class="list-actions-button-details">Powrót</a></p>     
+        </main>
+<%- include('../../fragments/footer.ejs') %>

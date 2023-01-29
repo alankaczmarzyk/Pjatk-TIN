@@ -1,0 +1,74 @@
+<%- include('../../fragments/header.ejs') %>
+        <main>
+            <script type="application/javascript" src="/js/validationCourierForm.js"></script>
+            <h2><%=pageTitle %></h2>
+            <form class="form" method="post" action="<%= formAction %>" novalidate >
+                <input type="hidden" name="courId" value="<%= cour._id %>">
+
+                <label for="firstName">Imię: <span class="symbol-required">*</span></label>
+                <input type="text" name="firstName" id="firstName" placeholder="2-60 znaków" value="<%= cour.firstName %>"
+                class="<%= validationErrors.find(e=>e.path.includes('firstName')) ? 'error-input' : '' %>"
+                <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+                <span id="errorFirstName" class="errors-text">
+                    <% if (validationErrors.find(e=> e.path.includes('firstName'))) { %>
+                        <%= validationErrors.find(e=> e.path.includes('firstName')).message %>
+                    <% } %>
+                </span>
+
+                <label for="lastName">Nazwisko: <span class="symbol-required">*</span></label>
+                <input type="text" name="lastName" id="lastName" placeholder="2-60 znaków" value="<%= cour.lastName %>"
+                class="<%= validationErrors.find(e=>e.path.includes('lastName')) ? 'error-input' : '' %>"
+                <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+                <span id="errorLastName" class="errors-text">
+                    <% if (validationErrors.find(e=> e.path.includes('lastName'))) { %>
+                        <%= validationErrors.find(e=> e.path.includes('lastName')).message %>
+                    <% } %>
+                </span>
+
+                <% if (formMode == 'showDetails') { %>
+                    <div class="section-buttons">
+                        <a href="/couriers/edit/<%= cour._id %>" class="list-actions-button-edit">Edytuj</a>
+                    </div>
+                <% } %>
+
+                <div class="form-buttons">
+                    <p id="errorsSummary" class="errors-text"></p> 
+                    <% if (formMode !== 'showDetails') { %>
+                    <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+                    <a class="form-button-cancel" href="/couriers">Anuluj</a>
+                    <% } %> 
+                </div>
+            </form>
+
+            <% if (formMode == 'showDetails' || formMode == 'edit') { %>   
+                <h2>Szczegóły zamówień</h2>
+                <table class="table-list">
+                    <thead>
+                        <tr>
+                            <th>Klient</th>
+                            <th>Waga</th>
+                            <th>Data doręczenia</th>
+                            <th>Cena</th>
+                        </tr>
+                    </thead>   
+                    <tbody>
+                        <% for (let c of cour.orders) { %>
+                        <tr>
+                            <td><a href="/customers/details/<%= c.customer._id %>"><%= c.customer.firstName +' '+ c.customer.lastName%></a></td>
+                            <td><%= c.weight %></td>
+                            <td><%= c.date ? c.date.toISOString().split('T')[0] : '' %></td>
+                            <td><%= c.price %></td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+                <% } %>    
+
+                <div class="form-buttons">
+                    <p id="errorsSummary" class="errors-text"></p> 
+                <%if((formMode == 'showDetails')) { %>
+                    <a class="form-button-cancel" href="/couriers">Powrót</a>
+                <% } %>
+            </div>
+        </main>
+        <%- include('../../fragments/footer.ejs') %>

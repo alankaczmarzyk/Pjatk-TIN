@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>LHD</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script type="application/javascript" src="../js/validationCommon.js"></script>
+</head>
+<body>
+    <header>
+        <h1>LHD Company</h1>
+        <img src="/images/logo.jpg" alt="LHD Logo">
+    </header>    
+        <nav>
+            <ul>
+                <li><a href="/" class="<%= navLocation == 'main' ? 'active' : ''%>">Strona główna</a></li>
+                <% if(loggedUser) { %>
+                <li><a href="/couriers" class="<%= navLocation == 'cour' ? 'active' : ''%>">Kurierzy</a></li>
+                <% } %>
+                <li><a href="/orders" class="<%= navLocation == 'ord' ? 'active' : ''%>">Zamówienia</a></li>
+                <li><a href="/customers" class="<%= navLocation == 'cust' ? 'active' : ''%>">Klienci</a></li>
+            </ul>
+        </nav>
+
+        

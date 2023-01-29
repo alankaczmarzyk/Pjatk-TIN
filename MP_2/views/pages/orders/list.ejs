@@ -1,0 +1,36 @@
+<%- include('../../fragments/header.ejs') %>
+        <main>
+            <h2>Lista zamówień</h2>
+                <table class="table-list">
+                    <thead>
+                        <tr>
+                            <th>Kurier</th>
+                            <th>Klient</th>
+                            <th>Waga [kg]</th>
+                            <th>Cena [zł]</th>
+                            <th>Akcje</th>
+                        </tr>
+                    </thead>   
+                    <tbody>
+                        <% for (let ord of ords) {%>
+                            <tr>
+                                <td><%=ord.courier.firstName + ' ' + ord.courier.lastName %></td>
+                                <td><%=ord.customer.firstName + ' ' + ord.customer.lastName %></td>
+                                <td><%=ord.weight %></td>
+                                <td><%=ord.price %></td>
+                                <td>
+                                    <ul class="list-actions">
+                                        <li><a href="/orders/details/<%=ord._id%>" class="list-actions-button-details">Szczegóły</a></li>
+                                        <li><a href="/orders/edit/<%=ord._id%>" class="list-actions-button-edit">Edytuj</a></li>
+                                        <li><a href="/orders/delete/<%=ord._id%>" class="list-actions-button-delete">Usuń</a></li>
+                                     </ul>
+                                </td>
+                            </tr>
+                            <% }%>
+                    </tbody>
+                </table>
+                <p><a href="/orders/add" class="button-add">Dodaj nowe zamówienie</a></p>
+
+
+        </main>
+        <%- include('../../fragments/footer.ejs') %>

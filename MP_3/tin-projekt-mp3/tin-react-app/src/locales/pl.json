@@ -1,0 +1,181 @@
+{
+    "main-page": {
+        "content": "Strona główna"
+    },
+    "nav": {
+        "main-page": "Strona główna",
+        "couriers": "Kurierzy",
+        "customers": "Klienci",
+        "orders": "Zamówienia"
+    },
+    "list": {
+        "actions": {
+            "title": "Akcje",
+            "details": "Szczegóły",
+            "edit": "Edytuj",
+            "delete": "Usuń"
+        }
+    },
+    "form": {
+        "actions": {
+            "return": "Powrót",
+            "edit": "Edytuj",
+            "cancel": "Anuluj",
+            "add": "Dodaj",
+            "login": "Zaloguj"
+        }
+    },
+
+    "cour": {
+        "fields": {
+            "firstName": "Imię",
+            "lastName": "Nazwisko",
+            "email": "Email",
+            "password": "Hasło",
+            "role": "Funkcja",
+            "user": "Użytkownik",
+            "admin": "Administrator",
+            "logged": "Zalogowany jako"
+        },
+        "list": {
+            "title": "Dane kuriera",
+            "addNew": "Dodaj nowego kuriera",
+            "noData": "Brak kurierów w bazie",
+            "pageTitle": "Lista kurierów"
+        },
+        "form": {
+            "order": {
+                "title":"Szczegóły zamówień",
+                "customer":"Klient",
+                "weight":"Waga [kg]",
+                "date":"Data doręczenia",
+                "price":"Cena [zł]"
+            },
+            "add": {
+                "pageTitle": "Nowy kurier",
+                "btnLabel": "Dodaj kuriera",
+                "confirm": {
+                    "header": "Potwierdzenie operacji",
+                    "text": "Pomyślnie dodano kuriera"
+                }
+            },
+            "edit": {
+                "pageTitle": "Edycja kuriera",
+                "btnLabel": "Zapisz zmiany",
+                "confirm": {
+                    "header": "Potwierdzenie operacji",
+                    "text": "Pomyślnie zaktualizowano kuriera"
+                }
+            }
+        },
+        "details": {
+            "loading": "Ładowanie danych kuriera..."
+        }
+    },
+
+
+    "cust": {
+        "fields": {
+            "firstName": "Imię",
+            "lastName": "Nazwisko",
+            "street": "Ulica",
+            "city": "Miasto",
+            "postCode": "Kod pocztowy",
+            "mail": "Email"
+        },
+        "list": {
+            "title": "Dane klienta",
+            "addNew": "Dodaj nowego klienta",
+            "noData": "Brak klientów w bazie",
+            "pageTitle": "Lista klientów"
+        },
+        "form": {
+            "order": {
+                "title":"Szczegóły zamówień",
+                "courier":"Kurier",
+                "weight":"Waga [kg]",
+                "date":"Data doręczenia",
+                "price":"Cena [zł]"
+            },
+            "add": {
+                "pageTitle": "Nowy klient",
+                "btnLabel": "Dodaj klienta",
+                "confirm": {
+                    "header": "Potwierdzenie operacji",
+                    "text": "Pomyślnie dodano klienta"
+                }
+            },
+            "edit": {
+                "pageTitle": "Edycja klienta",
+                "btnLabel": "Zapisz zmiany",
+                "confirm": {
+                    "header": "Potwierdzenie operacji",
+                    "text": "Pomyślnie zaktualizowano klienta"
+                }
+            }
+        },
+        "details": {
+            "loading": "Ładowanie danych klienta..."
+        }
+    },
+
+
+    "ord": {
+        "fields": {
+            "courierData": "Dane kuriera",
+            "customerData": "Dane klienta",
+            "weight": "Waga",
+            "date": "Data doręczenia",
+            "price": "Cena" 
+        },
+        "list": {
+            "title": "Dane zamówienia",
+            "addNew": "Dodaj nowe zamówienie",
+            "noData": "Brak zamówień w bazie",
+            "pageTitle": "Lista zamówień"
+        },
+        "form": {
+            "add": {
+                "pageTitle": "Nowe zamówienie",
+                "btnLabel": "Dodaj zamówienie",
+                "confirm": {
+                    "header": "Potwierdzenie operacji",
+                    "text": "Pomyślnie dodano zamówienie"
+                }
+            },
+            "edit": {
+                "pageTitle": "Edycja zamówienia",
+                "btnLabel": "Zapisz zmiany",
+                "confirm": {
+                    "header": "Potwierdzenie operacji",
+                    "text": "Pomyślnie zaktualizowano zamówienie"
+                }
+            }
+        },
+        "details": {
+            "loading": "Ładowanie danych zamówienia..."
+        }
+    },
+    
+    "validation": {
+        "messages": {
+            "notEmpty": "Pole jest wymagane",
+            "len_2_60": "Pole powinno zawierać od 2 do 60 znaków",
+            "isZipCode": "Pole powinno zawierać prawidłowy kod pocztowy",
+            "isEmail": "Pole powinno zawierać prawidłowy adres email",
+            "formErrors": "Formularz zawiera błędy"
+        }
+    },
+    "placeholders": {
+            "2_60": "2-60 znaków",
+            "post_Code":"xx-xxx",
+            "mail":"np. kowalski@gmail.com",
+            "price":"kwota w zł",
+            "weight":"waga w kg"  
+    },
+    "auth": {
+        "pageTitle": "Zaloguj sie",
+        "logout": "Wyloguj sie",
+        "status": "Zaloguj sie by otrzymac funkcjonalności"
+    }
+}

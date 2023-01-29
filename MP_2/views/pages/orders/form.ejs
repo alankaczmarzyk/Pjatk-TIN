@@ -1,0 +1,95 @@
+<%- include('../../fragments/header.ejs') %>
+        <main>
+            <script type="application/javascript" src="../js/validationOrderForm.js"></script>
+            <h2><%=pageTitle %></h2>
+            <form class="form" method="post" action="<%= formAction %>" novalidate>
+                <input type="hidden" name="ordId" value="<%= ord._id %>">
+
+                <label for="courier_id">Kurier: <span class="symbol-required">*</span></label>
+                <select name="courier_id" id="courier_id" required
+                class="<%= validationErrors.find(e=>e.path.includes('courier_id')) ? 'error-input' : '' %>"
+                        <%= (formMode === 'showDetails') ? 'disabled' : '' %>>
+                    <% if (formMode !== 'edit' ){ %>
+                        <option value="" selected="selected">--Wybierz kuriera--</option>
+                    <% } %>
+                    <% for (let i = 0; i < allCours.length; i++) { let cour = allCours[i]; %>
+                    <option value="<%= cour._id %>" label="<%= cour.firstName + ' ' + cour.lastName %>"
+                    <%= (ord._id && cour._id.toString() === ord.courier._id.toString()) ? 'selected' : '' %>
+                    </option>
+                    <% } %>
+                </select>
+                <span id="errorCourier" class="errors-text">
+                    <% if (validationErrors.find(e=> e.path.includes('courier_id'))) { %>
+                        <%= validationErrors.find(e=> e.path.includes('courier_id')).message %>
+                    <% } %>
+                </span>   
+
+
+                <label for="customer_id">Klient: <span class="symbol-required">*</span></label>
+                <select name="customer_id" id="customer_id" required
+                class="<%= validationErrors.find(e=>e.path.includes('customer_id')) ? 'error-input' : '' %>"
+                        <%= (formMode === 'showDetails') ? 'disabled' : '' %>>
+                    <% if (formMode !== 'edit' ){ %>
+                        <option value="" selected="selected">--Wybierz kuriera--</option>
+                    <% } %>
+                    <% for (let i = 0; i < allCusts.length; i++) { let cust = allCusts[i]; %>
+                    <option value="<%= cust._id %>" label="<%= cust.firstName + ' ' + cust.lastName %>"
+                    <%= (ord._id && cust._id.toString() === ord.customer._id.toString()) ? 'selected' : '' %>
+                    </option>
+                    <% } %>
+                </select>
+                <span id="errorCustomer" class="errors-text">
+                    <% if (validationErrors.find(e=> e.path.includes('customer_id'))) { %>
+                        <%= validationErrors.find(e=> e.path.includes('customer_id')).message %>
+                    <% } %>
+                </span>   
+             
+
+                <label for="weight">Waga: <span class="symbol-required">*</span></label>
+                <input type="text" name="weight" id="weight" placeholder="waga w kg" value="<%= ord.weight %>"
+                class="<%= validationErrors.find(e=>e.path.includes('weight')) ? 'error-input' : '' %>"
+                <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+                <span id="errorWeight" class="errors-text">
+                    <% if (validationErrors.find(e=> e.path.includes('weight'))) { %>
+                        <%= validationErrors.find(e=> e.path.includes('weight')).message %>
+                    <% } %>
+                </span>
+
+                <label for="date">Data: </label>
+                <input type="date" name="date" id="date" value="<%= ord.date ? ord.date.toISOString().split('T')[0] : '' %>"
+                class="<%= validationErrors.find(e=>e.path.includes('date')) ? 'error-input' : '' %>"
+                <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+                <span id="errorDate" class="errors-text">
+                    <% if (validationErrors.find(e=> e.path.includes('date'))) { %>
+                        <%= validationErrors.find(e=> e.path.includes('date')).message %>
+                    <% } %>
+                </span>
+
+                <label for="price">Cena: <span class="symbol-required">*</span></label>
+                <input type="text" name="price" id="price" placeholder="kwota w PLN" required value="<%= ord.price %>"
+                class="<%= validationErrors.find(e=>e.path.includes('price')) ? 'error-input' : '' %>"
+                <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+                <span id="errorPrice" class="errors-text">
+                    <% if (validationErrors.find(e=> e.path.includes('price'))) { %>
+                        <%= validationErrors.find(e=> e.path.includes('price')).message %>
+                    <% } %>
+                </span>
+
+                <% if (formMode == 'showDetails') { %>
+                    <div class="section-buttons">
+                        <a href="/orders/edit/<%= ord._id %>" class="list-actions-button-edit">Edytuj</a>
+                        <a class="form-button-back" href="/orders">Powrót</a>
+                    </div>
+                <% } %>
+
+    
+                <div class="form-buttons">
+                    <p id="errorsSummary" class="errors-text"></p> 
+                    <% if (formMode !== 'showDetails') { %>
+                    <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+                    <a class="form-button-cancel" href="/orders">Anuluj</a>
+                    <% } %> 
+                </div>
+            </form>
+        </main>
+        <%- include('../../fragments/footer.ejs') %>

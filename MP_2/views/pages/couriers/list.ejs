@@ -1,0 +1,32 @@
+<%- include('../../fragments/header.ejs') %>
+        <main>
+            <h2>Lista kurierów</h2>
+                <table class="table-list">
+                    <thead>
+                        <tr>
+                            <th>Imię</th>
+                            <th>Nazwisko</th>
+                            <th>Akcje</th>
+                        </tr>
+                    </thead>   
+                    <tbody>
+                        <% for (let cour of cours) {%>
+                        <tr>
+                            <td><%=cour.firstName %></td>
+                            <td><%=cour.lastName %></td>
+                            <td>
+                                <ul class="list-actions">
+                                    <li><a href="/couriers/details/<%=cour._id%>" class="list-actions-button-details">Szczegóły</a></li>
+                                    <li><a href="/couriers/edit/<%=cour._id%>" class="list-actions-button-edit">Edytuj</a></li>
+                                    <li><a href="/couriers/delete/<%=cour._id%>" class="list-actions-button-delete">Usuń</a></li>
+                                 </ul>
+                            </td>
+                        </tr>
+                        <% }%>
+                    </tbody>
+                </table>
+                <p><a href="/couriers/add" class="button-add">Dodaj nowego kuriera</a></p>
+
+
+        </main>
+        <%- include('../../fragments/footer.ejs') %>

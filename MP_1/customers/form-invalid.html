@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>LHD</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+    <header>
+        <h1>LHD Company</h1>
+        <img src="..//images/logo.jpg" alt="LHD Logo">
+    </header>    
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="../couriers/list.html">Kurierzy</a></li>
+                <li><a href="../orders/list.html">Zamówienia</a></li>
+                <li><a href="list.html" class="active">Klienci</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Nowy klient</h2>
+            <form class="form">
+                <label for="firstName">Imię: <span class="symbol-required">*</span></label>
+                <input type="text" name="firstName" id="firstName" class="error-input" required/>
+                <span id="errorFirstName" class="errors-text">Pole jest wymagane</span>
+
+                <label for="lastName">Nazwisko: <span class="symbol-required">*</span></label>
+                <input type="text" name="lastName" id="lastName" class="error-input" required/>
+                <span id="errorLastName" class="errors-text">Pole jest wymagane</span>
+
+                <label for="street">Ulica: <span class="symbol-required">*</span></label>
+                <input type="text" name="street" id="street" class="error-input" required/>
+                <span id="errorStreet" class="errors-text">Pole jest wymagane</span>
+
+                <label for="city">Miasto: <span class="symbol-required">*</span></label>
+                <input type="text" name="city" id="city" class="error-input" required/>
+                <span id="errorCity" class="errors-text">Pole jest wymagane</span>
+
+                <label for="zipCode">Kod pocztowy: <span class="symbol-required">*</span></label>
+                <input type="text" name="zipCode" id="zipCode" class="error-input" required/>
+                <span id="errorZipCode" class="errors-text">Pole jest wymagane</span>
+
+                <label for="mail">Email: </label>
+                <input type="email" name="mail" id="mail"/>
+                <span id="errorMail"></span>
+
+                <div class="form-buttons">
+                    <p id="errorsSummary" class="errors-text">Formularz zawiera błędy</p>
+                    <input type="submit" class="form-button-submit" value="Dodaj" />
+                    <a href="list.html" class="form-button-cancel">Anuluj</a>
+                </div>
+            </form>
+        </main>
+    <footer>
+        <p>Alan, Kaczmarzyk, s2295</p>
+    </footer>    
+
+</body>
+</html>

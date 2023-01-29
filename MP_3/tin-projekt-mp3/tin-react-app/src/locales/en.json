@@ -1,0 +1,184 @@
+{
+	"main-page": {
+		"content": "Main Page"
+	},
+	"nav": {
+		"main-page": "Main page",
+		"couriers": "Couriers",
+		"customers": "Customers",
+		"orders": "Orders"
+	},
+	"list": {
+		"actions": {
+			"title": "Actions",
+			"details": "Details",
+			"edit": "Edit",
+			"delete": "Delete"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Return",
+			"edit": "Edit",
+			"cancel": "Cancel",
+			"add": "Add",
+            "login": "Enter"
+		}
+	},
+	"cour": {
+		"fields": {
+			"firstName": "First name",
+			"lastName": "Last name",
+            "email": "Email",
+            "password": "Password",
+            "role": "Function",
+            "user": "User",
+            "admin": "Admin",
+            "logged": "Logged in as"
+		},
+		"list": {
+			"title": "Courier details",
+			"addNew": "Add new courier",
+			"noData": "No couriers in database",
+			"pageTitle": "List of couriers"
+		},
+		"form": {
+            "order": {
+                "title":"Orders details",
+				"customer":"Customer",
+                "weight":"Weight [kg]",
+				"date":"Delivery date",
+                "price":"Price [zł]"
+            },
+			"add": {
+				"pageTitle": "New courier",
+				"btnLabel": "Add the courier",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The new courier has been successfully created"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editing a courier",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The courier has been successfully updated"
+				}
+			}
+		},
+		"field": {
+			"firstName": "emp.field.firstName"
+		},
+		"details": {
+            "loading": "Loading courier's data..."
+        }
+	},
+
+	"cust": {
+        "fields": {
+            "firstName": "First name",
+            "lastName": "Last name",
+            "street": "Street",
+            "city": "City",
+            "postCode": "Post Code",
+            "mail": "Email"
+        },
+        "list": {
+            "title": "Courier details",
+			"addNew": "Add new customer",
+			"noData": "No customers in database",
+			"pageTitle": "List of customers"
+        },
+        "form": {
+            "order": {
+                "title":"Orders details",
+                "courier":"Courier",
+                "weight":"Weight [kg]",
+                "date":"Delivery date",
+                "price":"Price [zł]"
+            },
+            "add": {
+                "pageTitle": "New Customer",
+                "btnLabel": "Add the customer",
+                "confirm": {
+                    "header": "Confirmation",
+                    "text": "The customer has been successfully updated"
+                }
+            },
+            "edit": {
+                "pageTitle": "Editing a customer",
+                "btnLabel": "Save changes",
+                "confirm": {
+                    "header": "Confirmation",
+                    "text": "The customer has been successfully updated"
+                }
+            }
+        },
+        "details": {
+			"loading": "Loading customer's data..."
+        }
+    },
+
+
+	"ord": {
+        "fields": {
+			"courierData": "Courier data",
+            "customerData": "Customer data",
+            "weight": "Weight",
+            "date": "Delivery date",
+            "price": "Price" 
+        },
+        "list": {
+            "title": "Order details",
+			"addNew": "Add new order",
+			"noData": "No orders in database",
+			"pageTitle": "List of orders"
+        },
+        "form": {
+            "add": {
+				"pageTitle": "New Order",
+                "btnLabel": "Add the order",
+                "confirm": {
+                    "header": "Potwierdzenie operacji",
+                    "text": "Pomyślnie dodano klienta"
+                }
+            },
+            "edit": {
+                "pageTitle": "Editing an order",
+                "btnLabel": "Save changes",
+                "confirm": {
+                    "header": "Confirmation",
+                    "text": "The order has been successfully updated"
+                }
+            }
+        },
+        "details": {
+            "loading": "Loading customer's data..."
+        }
+    },
+
+
+    "validation": {
+        "messages": {
+            "notEmpty": "The field is required",
+            "len_2_60": "The field should contain from 2 to 60 characters",
+            "isZipCode": "The field should contain a valid post code",
+            "isEmail": "The field should contain a valid email address",
+            "formErrors": "The form contains errors"
+        }
+    },
+	"placeholders": {
+		"2_60": "2-60 characters",
+		"post_Code":"xx-xxx",
+		"mail":"e.g. kowalski@gmail.com",
+        "price":"amount in PLN",
+        "weight":"weight in kilograms"
+},
+"auth": {
+    "pageTitle": "Log in",
+    "logout": "Log out",
+    "status": "Log in to get functionalities"
+}
+
+}
