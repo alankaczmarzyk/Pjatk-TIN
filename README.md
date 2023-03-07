@@ -1,4 +1,4 @@
-#Internet Technologies
+﻿# Final project to complete the 'Internet Technologies' course using Single-page application
 
 Guides: 
 https://users.pja.edu.pl/~mdrabik/materials/tin/schedule/full-time/index.html
